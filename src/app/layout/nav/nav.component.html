@@ -1,0 +1,30 @@
+<nav class="navbar sticky-top bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand ms-5" href="#">Website Icon</a>
+      <ul class="nav me-5">
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Work</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item theme-icon-nav">
+            <div class="theme-icon-wrapper">
+                @if (theme === 'dark') {
+                    <i class="theme-icon bi bi-brightness-high-fill h4" (click)="themeService.theme.next('light')"></i>
+                }
+                @if (theme === 'light') {
+                    <i class="theme-icon bi bi-moon-stars-fill h4" (click)="themeService.theme.next('dark')"></i>
+                }
+            </div>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-disabled="true">Download Resume</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
