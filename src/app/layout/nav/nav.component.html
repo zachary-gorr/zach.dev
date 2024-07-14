@@ -1,28 +1,28 @@
-<nav class="navbar sticky-top bg-body-tertiary">
+<nav class="navbar sticky-top bg p-3">
     <div class="container-fluid">
-      <a class="navbar-brand ms-5" href="#">Website Icon</a>
+      <a class="navbar-brand ms-5 heading-3" href="#">< ZG /></a>
       <ul class="nav me-5">
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link contrast" href="#">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Work</a>
+          <a class="nav-link contrast" href="#">Work</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link contrast" href="#">Contact</a>
         </li>
         <li class="nav-item theme-icon-nav">
             <div class="theme-icon-wrapper">
-                @if (theme === 'dark') {
-                    <i class="theme-icon bi bi-brightness-high-fill h4" (click)="themeService.theme.next('light')"></i>
+                @if (theme() === 'dark') {
+                  <i class="theme-icon bi bi-moon-stars-fill h4" (click)="updateTheme()"></i>
                 }
-                @if (theme === 'light') {
-                    <i class="theme-icon bi bi-moon-stars-fill h4" (click)="themeService.theme.next('dark')"></i>
+                @else {
+                  <i class="theme-icon bi bi-brightness-high-fill h4 white" (click)="updateTheme()"></i>
                 }
             </div>
           </li>
         <li class="nav-item">
-          <a class="nav-link" aria-disabled="true">Download Resume</a>
+          <a class="nav-link contrast" aria-disabled="true">Download Resume</a>
         </li>
       </ul>
     </div>

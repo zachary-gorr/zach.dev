@@ -1,10 +1,12 @@
 .page-container {
-    width: 90vw;
+    width: 100vw;
+    padding: 10vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     row-gap: 10rem;
+    background-color: var(--app-gray-800);
 }
 
 .home-main-hero {
@@ -13,6 +15,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    background-color: var(--app-gray-800);
 }
 
 .home-main-hero-copy {
@@ -68,7 +71,7 @@
 .indicator-pulse {
     width: 16px;
     height: 16px;
-    background-color: rgb(153, 197, 213);;
+    background-color: var(--app-gray-400);
     border-radius: 50%;
     opacity: .75;
     animation: ping 3s cubic-bezier(0,0,.2,1) infinite;
@@ -80,7 +83,7 @@
     height: 16px;
     left: -10px;
     border-radius: 50%;
-    background-color: rgb(6, 112, 151);;
+    background-color: var(--app-gray-200);
 }
 
 .social-links {

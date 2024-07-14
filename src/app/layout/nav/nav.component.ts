@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { ThemeService } from '../../services/theme/theme.service';
 
 @Component({
@@ -10,18 +10,17 @@ import { ThemeService } from '../../services/theme/theme.service';
 })
 export class NavComponent implements OnInit {
 
-  theme = 'dark';
+  theme = signal('dark');
 
   constructor(public themeService: ThemeService) {}
 
   ngOnInit(){
-    this.themeService.theme.subscribe(theme => {
-      this.updateTheme(theme);
-    })
+    this.themeService.theme.subscribe(theme => this.theme.set(theme));
   }
 
-  updateTheme(theme: any) {
-    this.theme = theme;
+  updateTheme() {
+    this.themeService.updateTheme();
+    console.log('Hiting Theme Button')
   }
 
 }
