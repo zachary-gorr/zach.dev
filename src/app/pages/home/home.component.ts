@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, HostListener } from '@angular/core';
 import { NavComponent } from '../../layout/nav/nav.component';
 
 @Component({

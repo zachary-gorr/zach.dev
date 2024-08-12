@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, HostListener, OnInit, signal } from '@angular/core';
 import { ThemeService } from '../../services/theme/theme.service';
 
 @Component({
@@ -11,8 +11,18 @@ import { ThemeService } from '../../services/theme/theme.service';
 export class NavComponent implements OnInit {
 
   theme = signal('dark');
+  userScrolled = signal(false);
 
   constructor(public themeService: ThemeService) {}
+
+  @HostListener('window:scroll', ['$event']) onScrollEvent($event: any) {
+    if (window.scrollY > 100) {
+     this.userScrolled.set(true);
+    }
+    else {
+     this.userScrolled.set(false);
+    }
+   }
 
   ngOnInit(){
     this.themeService.theme.subscribe(theme => this.theme.set(theme));

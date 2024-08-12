@@ -1,5 +1,14 @@
+html, body {
+    background-color: var(--app-gray-800);
+}
+
 .contrast {
     color: var(--app-gray-50);
+
+    &:hover {
+        color: var(--app-gray-400);
+        cursor: pointer;
+    }
 }
 
 .white {
