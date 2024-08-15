@@ -10,8 +10,12 @@ import { ThemeService } from '../../services/theme/theme.service';
 })
 export class NavComponent implements OnInit {
 
-  theme = signal('dark');
+  theme = signal('light');
   userScrolled = signal(false);
+  backgroundOrbs = [
+    { index: 0, color: 'purple', xPos: '', yPos: '', width: '', height: '' },
+    { index: 1, color: 'green', xPos: '', yPos: '', width: '', height: '' },
+  ];
 
   constructor(public themeService: ThemeService) {}
 
@@ -30,7 +34,6 @@ export class NavComponent implements OnInit {
 
   updateTheme() {
     this.themeService.updateTheme();
-    console.log('Hiting Theme Button')
   }
 
 }

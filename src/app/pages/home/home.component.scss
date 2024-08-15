@@ -1,0 +1,13 @@
+.villages-v { background-image: url('../../../assets/villages-v.svg') }
+.medigi-m { background-image: url('../../../assets/medigi-m.svg') }
+.figma-logo { background-image: url('../../../assets/figma-loggo.svg') }
+.git-logo { background-image: url('../../../assets/git-logo.svg') }
+.trello-logo { background-image: url('../../../assets/trello-logo.svg');}
+
+.medigi-m, .villages-v, .figma-logo, .git-logo, .trello-logo {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 32px;
+    height: 32px;
+}

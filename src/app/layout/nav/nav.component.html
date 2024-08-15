@@ -1,2 +1,81 @@
+<div>
+  <div class="sm:fixed sm:inset-y-0 sm:z-50 sm:flex sm:w-72 sm:flex-col">
+    <div class="blur-2xl absolute z-0">
+      <div class="beams -animate absolute"></div>
+    </div>
 
+    <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 shadow">
+      <div class="container flex flex-col py-5 gap-y-8">
+        <div class="flex flex-col">
+          <div class="headshot"></div>
+          <h3 class="text-2xl mt-4 bg-white">Zachary Gorr</h3>
+          <p class="text-sm font-light bg-white">Front End Software
+            Engineer</p>
+        </div>
+        <hr class="bg-gray-50 ">
 
+        <div class="flex flex-col gap-y-8">
+          <div class="flex flex-row items-center gap-x-4">
+            <div class="icon {{theme() === 'dark' ? ' bg-gray-800' : 'bg-gray-400'}}">
+              <div class="email"></div>
+            </div>
+            <div class="flex flex-col">
+              <p class="text-sm font-light bg-white">Email</p>
+              <a class="text-sm font-semi-bold bg-white"
+                href="mailto:zacharygorr04@yahoo.com">zacharygorr04&#64;yahoo.com</a>
+            </div>
+          </div>
+          <div class="flex flex-row items-center gap-x-4">
+            <div class="icon {{theme() === 'dark' ? ' bg-gray-800' : 'bg-gray-400'}}">
+              <div class="phone"></div>
+            </div>
+            <div class="flex flex-col">
+              <p class="text-sm font-light bg-white">Phone</p>
+              <a class="text-sm font-semi-bold bg-white"
+                href="tel:689-323-1129">(689)-323-1129</a>
+            </div>
+          </div>
+          <div class="flex flex-row items-center gap-x-4">
+            <div class="icon {{theme() === 'dark' ? ' bg-gray-800' : 'bg-gray-400'}}">
+              <div class="location"></div>
+            </div>
+            <div class="flex flex-col">
+              <p class="text-sm font-light bg-white">Location</p>
+              <p class="text-sm font-semi-bold bg-white">Orlando,
+                Florida</p>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="flex flex-col gap-y-8">
+          <div class="flex flex-row items-center gap-x-4">
+            <div class="icon bg-purple-400">
+              <div class="github"></div>
+            </div>
+            <div class="flex flex-col">
+              <p class="text-sm font-light bg-white">Github</p>
+              <a class="text-sm font-semi-bold bg-white"
+                href="https://github.com/zachary-gorr" target="_blank">&#64;zachary-gorr</a>
+            </div>
+          </div>
+          <div class="flex flex-row items-center gap-x-4">
+            <div class="icon bg-blue-900">
+              <div class="linkedin"></div>
+            </div>
+            <div class="flex flex-col">
+              <p class="text-sm font-light bg-white">LinkedIn</p>
+              <a class="text-sm font-semi-bold bg-white"
+                href="https://www.linkedin.com/in/zacharygorr/" target="_blank">&#64;zachary-gorr</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="py-10 sm:pl-72">
+    <ng-content></ng-content>
+  </main>
+</div>

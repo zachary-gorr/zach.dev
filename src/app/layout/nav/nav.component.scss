@@ -1,0 +1,72 @@
+@keyframes move-x {
+    0% {
+        background-position:  0% 0%, 0% 0%
+    }
+
+    to {
+        background-position: 350% 50%,350% 50%
+    }
+}
+
+.beams {
+    position: absolute;
+    --stripes: repeating-linear-gradient( 100deg, #fff 0%, #fff 7%, transparent 10%, transparent 12%, #fff 16% );
+    --stripesDark: repeating-linear-gradient( 100deg, #000 0%, #000 7%, transparent 10%, transparent 12%, #000 16% );
+    --rainbow: repeating-linear-gradient( 100deg, #60a5fa 10%, #e879f9 16%, #5eead4 22%, #60a5fa 30% );
+    contain: strict;
+    contain-intrinsic-size: 100vw 40vh;
+    background-image: var(--stripes),var(--rainbow);
+    background-size: 300%,200%;
+    height: inherit;
+    filter: invert(100%);
+    -webkit-mask-image: radial-gradient(ellipse at 100% 0%,black 40%,transparent 70%);
+    mask-image: radial-gradient(ellipse at 100% 0%,black 40%,transparent 70%);
+    pointer-events: none;
+}
+
+.beams:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: var(--stripes),var(--rainbow);
+    background-size: 200%,100%;
+    mix-blend-mode: difference
+}
+
+.-animate.beams:after {
+    animation: move-x 90s linear infinite
+}
+
+.headshot {
+    background-image: url(../../../assets/zachary-gorr-headshot.jpeg);
+    height: 50px;
+    width: 50px;
+    background-position: center center;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.icon {
+    padding: .5rem;
+    border-radius: 100%;
+}
+
+.email, .phone, .github, .location, .linkedin {
+    width: 24px;
+    height: 24px;
+}
+
+.email { background-image: url(../../../assets/mail.svg)}
+.phone { background-image: url(../../../assets/phone.svg) }
+.location { background-image: url(../../../assets/location.svg) }
+.github { background-image: url(../../../assets/github.svg) }
+.linkedin { background-image: url(../../../assets/linkedin.svg) }
+.github, .linkedin { 
+    background-position: center center;
+    background-size: cover; 
+}
+
