@@ -1,0 +1,61 @@
+/*
+ * Animated aurora beams — carried over from the original site's nav background.
+ *
+ * Two purple stripe stacks drift across each other at different speeds and
+ * directions; the interference between them is what reads as movement. Both are
+ * blended with `screen`, which can only brighten, so the result never leaves
+ * the purple family. (The original used `difference`, which resolves mixed
+ * hues to their complements and banded the top of the page olive.)
+ *
+ * Purely decorative. The global prefers-reduced-motion rule freezes it.
+ */
+
+@keyframes beams-drift {
+  from {
+    background-position: 0% 50%, 0% 50%;
+  }
+
+  to {
+    background-position: 300% 50%, 300% 50%;
+  }
+}
+
+.beams {
+  --stripes: repeating-linear-gradient(
+    100deg,
+    var(--beam-stripe) 0%,
+    var(--beam-stripe) 7%,
+    transparent 10%,
+    transparent 12%,
+    var(--beam-stripe) 16%
+  );
+  --wash: repeating-linear-gradient(
+    100deg,
+    var(--beam-1) 10%,
+    var(--beam-2) 16%,
+    var(--beam-3) 22%,
+    var(--beam-1) 30%
+  );
+
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: var(--stripes), var(--wash);
+  background-size: 300%, 200%;
+  opacity: var(--beam-opacity);
+  filter: blur(32px);
+  -webkit-mask-image: radial-gradient(ellipse 85% 70% at 50% 0%, #000 30%, transparent 74%);
+  mask-image: radial-gradient(ellipse 85% 70% at 50% 0%, #000 30%, transparent 74%);
+  animation: beams-drift 80s linear infinite;
+}
+
+.beams::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--stripes), var(--wash);
+  background-size: 200%, 150%;
+  mix-blend-mode: screen;
+  opacity: 0.55;
+  animation: beams-drift 50s linear infinite reverse;
+}

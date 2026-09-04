@@ -1,14 +1,39 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+
 <head>
   <meta charset="utf-8">
-  <title>Zachary Gorr</title>
+  <title>Zachary Gorr — Software Engineer</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+  <meta name="description"
+    content="Zachary Gorr is a software engineer in Orlando, Florida building AI-native, backend, platform, and developer-infrastructure systems.">
+  <meta name="theme-color" content="#0a0a0c">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+  <!-- Resolve theme before first paint so there is no flash of the wrong palette. -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('zach.dev:theme');
+        var theme = stored === 'light' || stored === 'dark'
+          ? stored
+          : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+        /* Gates the scroll-reveal styles so no-JS output stays visible. */
+        document.documentElement.classList.add('js');
+      } catch (e) { }
+    })();
+  </script>
 </head>
-<body data-theme="dark">
+
+<body>
   <app-root></app-root>
 </body>
 

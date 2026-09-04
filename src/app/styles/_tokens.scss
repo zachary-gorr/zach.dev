@@ -1,0 +1,48 @@
+/* Dark is the default; :root carries it so SSR output matches pre-paint state. */
+:root,
+:root[data-theme='dark'] {
+  --bg: #0a0a0c;
+  --bg-subtle: #101014;
+  --surface: #14141a;
+  --surface-raised: #1b1b22;
+  --border: #26262f;
+  --border-strong: #363642;
+  --text: #f2f2f5;
+  --text-muted: #a2a2ae;
+  --text-dim: #6d6d7a;
+  --accent: #8b7ff5;
+  --accent-text: #ab9fff;
+  --accent-soft: rgba(139, 127, 245, 0.14);
+  --accent-line: rgba(139, 127, 245, 0.35);
+  --glow: radial-gradient(60% 60% at 50% 0%, rgba(139, 127, 245, 0.16), transparent 70%);
+
+  /* Animated beams layer (see _beams.scss) — one purple hue only. */
+  --beam-stripe: rgba(183, 160, 255, 0.55);
+  --beam-1: #6d4df0;
+  --beam-2: #a884fa;
+  --beam-3: #5b32d6;
+  --beam-opacity: 0.34;
+}
+
+:root[data-theme='light'] {
+  --bg: #fbfbfc;
+  --bg-subtle: #f4f4f6;
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --border: #e4e4ea;
+  --border-strong: #cfcfd8;
+  --text: #15151a;
+  --text-muted: #55555f;
+  --text-dim: #85858f;
+  --accent: #5b4bd6;
+  --accent-text: #4b3cc4;
+  --accent-soft: rgba(91, 75, 214, 0.08);
+  --accent-line: rgba(91, 75, 214, 0.3);
+  --glow: radial-gradient(60% 60% at 50% 0%, rgba(91, 75, 214, 0.08), transparent 70%);
+
+  --beam-stripe: rgba(233, 224, 255, 0.9);
+  --beam-1: #a58cf9;
+  --beam-2: #c8b2fd;
+  --beam-3: #8e6df2;
+  --beam-opacity: 0.5;
+}
